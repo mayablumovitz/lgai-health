@@ -10,4 +10,5 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
   server_spec: null}
 metadata: {title: X-Ray Report Re/De-Identifier and Scorer, logo_img: 'asset:1200px-Northwestern_Wildcats_logo.png'}
 startup_form: Form1
+uplink_visible: true
 renamed: true
