@@ -2,7 +2,8 @@ unique_ids:
   forms:
     Form1: ZJKZWAUDV2ATZVYTCQ7ZW3ATKDNLSYUW
   modules: {}
-  server_modules: {}
+  server_modules:
+    ServerModule1: '1699471237154942229987284.3071'
   assets:
     1200px-Northwestern_Wildcats_logo.png: '1699467957428576656934792.7826'
     standard-page.html: UW423CM23OMFFYPYHXD5QVUW6EIQBPWH
