@@ -9,12 +9,13 @@ components:
   layout_properties: {slot: default}
   components:
   - name: Upload
-    properties: {text: Upload your x-ray report here, align: center, bold: true, font_size: 20}
+    properties: {text: Upload Your X-Ray Report Here, align: center, bold: true, font_size: 20,
+      spacing_below: large}
     type: Label
     layout_properties: {grid_position: 'SAHFJY,ZOCKWS'}
     data_bindings: []
   - name: Deidentify
-    properties: {text: De-identify my report, selected: true, align: center}
+    properties: {text: De-identify my report, selected: true, align: center, border: ''}
     type: RadioButton
     layout_properties: {grid_position: 'GZFPEF,SBXXWM', full_width_row: false}
     event_bindings: {clicked: Deidentify_clicked}
@@ -23,18 +24,25 @@ components:
     type: RadioButton
     layout_properties: {grid_position: 'HNXAHF,BYTHSV'}
     event_bindings: {clicked: Reidentify_clicked}
-  - name: file_loader_1
-    properties: {file_types: ''}
+  - name: Uploader
+    properties: {file_types: '', background: 'theme:Primary Container', role: null,
+      show_state: true, bold: false, spacing_below: large}
     type: FileLoader
     layout_properties: {grid_position: 'SFIJIR,ARYASF'}
-    event_bindings: {change: file_loader_1_change}
+    event_bindings: {change: Uploader_change}
     data_bindings:
-    - {property: file_types, code: 'self.item[''.txt'']', writeback: false}
+    - {property: file_types, code: '''.txt''', writeback: false}
   - name: Submit
-    properties: {text: Submit, spacing_above: medium}
+    properties: {text: Submit, spacing_above: large, background: 'theme:Primary Container',
+      font: '', underline: false, spacing_below: large}
     type: Button
     layout_properties: {grid_position: 'JTERTZ,RWNGGG', row_background: ''}
     event_bindings: {click: Submit_click}
+    data_bindings: []
+  - name: Output
+    properties: {text: Your output will print here when ready, spacing_above: large}
+    type: TextArea
+    layout_properties: {grid_position: 'PHXHQM,CLASMZ'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
