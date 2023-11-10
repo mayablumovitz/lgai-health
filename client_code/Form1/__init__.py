@@ -13,8 +13,10 @@ class Form1(Form1Template):
       alert("Upload your file to run.")
       raise ValueError("No file was uploaded.")
     if (self.Reidentify.selected):
+      print("running reidentify")
       result = anvil.server.call('reidentify', self.Uploader.file)
     else:
+      print("running deidentify")
       result = anvil.server.call('deidentify', self.Uploader.file)
     self.Output.text = result
     print(result)
