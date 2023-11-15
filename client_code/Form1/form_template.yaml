@@ -40,7 +40,8 @@ components:
     event_bindings: {click: Submit_click}
     data_bindings: []
   - name: Output
-    properties: {text: Your output will print here when ready, spacing_above: large}
+    properties: {text: Your output will print here when ready, spacing_above: large,
+      auto_expand: true}
     type: TextArea
     layout_properties: {grid_position: 'PHXHQM,CLASMZ'}
 - type: FlowPanel
