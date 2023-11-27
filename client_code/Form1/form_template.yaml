@@ -44,6 +44,13 @@ components:
       auto_expand: true}
     type: TextArea
     layout_properties: {grid_position: 'PHXHQM,CLASMZ'}
+  - name: Download
+    properties: {text: Download as .txt, spacing_above: large, background: 'theme:Primary
+        Container', font: '', underline: false, spacing_below: large}
+    type: Button
+    layout_properties: {grid_position: 'FQPEMM,KRLTXQ'}
+    event_bindings: {click: Download_click}
+    data_bindings: []
 - type: FlowPanel
   properties: {}
   name: navbar_links
