@@ -20,7 +20,7 @@ class Form1(Form1Template):
     else:
       print("running deidentify")
       result = anvil.server.call('deidentify', str(content))
-    
+
     result_text = result['generated_text'].split('FINAL REPORT', 2)[2].strip()
     result_text = result_text.replace('\\n', '\n')
     self.Output.text = 'FINAL REPORT\n' + result_text
@@ -28,7 +28,8 @@ class Form1(Form1Template):
     if(self.Uploader_gold.file is not None):
       gold_content = self.Uploader_gold.file.get_bytes()
       score = anvil.server.call('score', str(gold_content), str(content))
-      self.gold_score.
+      print(score)
+      self.gold_score.text = "Gold Standard Score: " + score['generated_text']
 
   def Uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
