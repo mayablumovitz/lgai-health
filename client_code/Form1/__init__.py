@@ -28,8 +28,7 @@ class Form1(Form1Template):
     if(self.Uploader_gold.file is not None):
       gold_content = self.Uploader_gold.file.get_bytes()
       score = anvil.server.call('score', str(gold_content), str(content))
-      print(score.split("Score: ")[-1])
-      self.gold_score.text = "Gold Standard Score: " + score['generated_text']
+      self.gold_score.text = "Gold Standard Score: " + score['generated_text'].split("Score: ")[-1][0]
 
   def Uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
