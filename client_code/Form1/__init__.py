@@ -25,10 +25,19 @@ class Form1(Form1Template):
     result_text = result_text.replace('\\n', '\n')
     self.Output.text = 'FINAL REPORT\n' + result_text
 
+    if(self.Uploader_gold.file is not None):
+      gold_content = self.Uploader_gold.file.get_bytes()
+      score = anvil.server.call('score', str(gold_content), str(content))
+      self.gold_score.
+
   def Uploader_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     print("uploaded")
 
+  def Uploader_gold_change(self, file, **event_args):
+    """This method is called when a new file is loaded into this FileLoader"""
+    print("uploaded")
+    
   def Reidentify_clicked(self, **event_args):
     """This method is called when this radio button is selected"""
     pass
