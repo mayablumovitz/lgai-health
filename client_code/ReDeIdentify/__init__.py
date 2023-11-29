@@ -16,11 +16,12 @@ class ReDeIdentify(ReDeIdentifyTemplate):
     if (self.Reidentify.selected):
       print("running reidentify")
       result = anvil.server.call('reidentify', str(content))
+      result_text = result['generated_text'].split('FINAL REPORT', 2)[2].strip()
     else:
       print("running deidentify")
       result = anvil.server.call('deidentify', str(content))
-
-    result_text = result['generated_text'].split('FINAL REPORT', 2)[2].strip()
+      result_text = result['generated_text'].split('replaced with underscores:')[-1]
+      print(result_text)
     result_text = result_text.replace('\\n', '\n')
     self.Output.text = 'FINAL REPORT\n' + result_text
 
