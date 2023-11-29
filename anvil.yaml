@@ -3,12 +3,13 @@ services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+startup: {type: form, module: Main}
 package_name: LGAI_Health
 allow_embedding: false
 name: LGAI-Health
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
 metadata: {title: X-Ray Report Re/De-Identifier and Scorer, logo_img: 'asset:1200px-Northwestern_Wildcats_logo.png'}
-startup_form: Form1
+startup_form: null
 uplink_visible: true
 renamed: true

@@ -1,9 +1,8 @@
-from ._anvil_designer import Form1Template
+from ._anvil_designer import ReDeIdentifyTemplate
 from anvil import *
 import anvil.server
-import anvil.media
 
-class Form1(Form1Template):
+class ReDeIdentify(ReDeIdentifyTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -25,16 +24,7 @@ class Form1(Form1Template):
     result_text = result_text.replace('\\n', '\n')
     self.Output.text = 'FINAL REPORT\n' + result_text
 
-    if(self.Uploader_gold.file is not None):
-      gold_content = self.Uploader_gold.file.get_bytes()
-      score = anvil.server.call('score', str(gold_content), str(content))
-      self.gold_score.text = "Gold Standard Score: " + score['generated_text'].split("Score: ")[-1][0]
-
   def Uploader_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    print("uploaded")
-
-  def Uploader_gold_change(self, file, **event_args):
     """This method is called when a new file is loaded into this FileLoader"""
     print("uploaded")
     
@@ -50,7 +40,4 @@ class Form1(Form1Template):
     """This method is called when the button is clicked"""
     txt_media = anvil.server.call('get_media_txt', self.Output.text)
     anvil.media.download(txt_media)
-
-  def button_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
+    

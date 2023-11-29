@@ -1,0 +1,66 @@
+container: {type: ColumnPanel}
+components:
+- name: Upload
+  properties: {text: Submit Your Reports Here for Scoring, align: center, bold: true,
+    font_size: 20, spacing_below: large}
+  type: Label
+  layout_properties: {grid_position: 'UZAAIQ,VIDNCV'}
+  data_bindings: []
+- name: label_2
+  properties: {text: Golden Standard Report, align: center, underline: true}
+  type: Label
+  layout_properties: {grid_position: 'UJGAJD,DKTMAA'}
+- name: Uploader_gold
+  properties: {file_types: '', background: 'theme:Primary Container', role: null,
+    show_state: true, bold: false, spacing_below: large}
+  type: FileLoader
+  layout_properties: {grid_position: 'QNKHLU,SKKQFV'}
+  event_bindings: {change: Uploader_gold_change}
+  data_bindings:
+  - {property: file_types, code: '''.txt''', writeback: false}
+- name: label_1
+  properties: {text: My Report, align: center, underline: true}
+  type: Label
+  layout_properties: {grid_position: 'RMNCRF,RAZQHN'}
+- name: Uploader
+  properties: {file_types: '', background: 'theme:Primary Container', role: null,
+    show_state: true, bold: false, spacing_below: large}
+  type: FileLoader
+  layout_properties: {grid_position: 'KRVNQN,VILCVU'}
+  event_bindings: {change: Uploader_change}
+  data_bindings:
+  - {property: file_types, code: '''.txt''', writeback: false}
+- name: Submit
+  properties: {role: filled-button, enabled: true, visible: true, text: Submit, font_size: 16,
+    font: '', spacing_above: large, spacing_below: large, background: 'theme:Primary',
+    bold: true, underline: false, icon: ''}
+  type: Button
+  layout_properties: {grid_position: 'FJKLHZ,CCODRN'}
+  event_bindings: {click: Submit_click}
+  data_bindings: []
+- name: gold_score
+  properties: {align: center, text: 'Gold Standard Score: (will update when ready)
+
+      ', font_size: 16}
+  type: Label
+  layout_properties: {grid_position: 'TUVCMP,EZAPKH'}
+- name: label_3
+  properties: {text: 'Scoring Explanation:
+
+
+      Score: 2 means that your report mentions all clinically relevant findings present
+      in the golden standard report, while properly contextualizing them.
+
+      Score: 1 means that your report mentions all clinically relevant findings present
+      in the golden standard report, but improperly contextualizes one or more of
+      them.
+
+      Score: 0 means that your report omits mention of any clinically relevant finding
+      present in the golden standard report.
+
+      ', underline: false}
+  type: Label
+  layout_properties: {grid_position: 'XDVABW,EDWANE'}
+is_package: true
+custom_component: true
+toolbox_item: {title: Scoring}

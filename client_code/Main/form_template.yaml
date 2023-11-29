@@ -1,0 +1,93 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {role: null}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: image_1
+    properties: {source: _/theme/engineering-logo.svg, height: 31.1953125, horizontal_align: left,
+      background: ''}
+    type: Image
+    layout_properties: {grid_position: 'AYWPOY,HQHLUU'}
+  - name: Title
+    properties: {align: center, text: 'Northwestern MSAI: Law and Governance of AI
+
+        Team Health - X-ray Report Tools', font_size: 22, role: null, foreground: 'theme:On
+        Primary Container', background: 'theme:Primary Overlay 1'}
+    type: Label
+    layout_properties: {grid_position: 'PURGNR,GBNVUQ'}
+    data_bindings:
+    - {property: font, code: '', writeback: false}
+  - name: spacer_2
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'QTVNDR,BFBWKR'}
+  - name: xy_panel_1
+    properties: {height: 40.875, role: navbar}
+    type: XYPanel
+    layout_properties: {grid_position: 'VUGAFT,MFMJBR'}
+    components:
+    - name: ReDeIdentify
+      properties: {role: selected-navbar, enabled: true, foreground: '', text: Re/De-Identify Reports,
+        font_size: 17, italic: false, background: '', bold: false, underline: false}
+      type: Button
+      layout_properties: {x: 0, y: 0, width: 477}
+      event_bindings: {click: ReDeIdentify_click}
+    - name: Scoring
+      properties: {text: Score a Report, font_size: 17, role: null}
+      type: Button
+      layout_properties: {x: 478.734375, y: 0, width: 489.2580625}
+      event_bindings: {click: Scoring_click}
+  - name: spacer_1
+    properties: {height: 32}
+    type: Spacer
+    layout_properties: {grid_position: 'PRGPRR,GQNLDJ'}
+  - name: outlined_card_1
+    properties: {role: outlined-card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'OVKPEI,LBSDYD'}
+    components:
+    - name: re_de_identify_1
+      properties: {}
+      type: form:ReDeIdentify
+      layout_properties: {grid_position: 'GNTLPP,ORBAUU'}
+    - name: scoring_1
+      properties: {}
+      type: form:Scoring
+      layout_properties: {grid_position: 'AKVQMH,CCPHTF'}
+  - name: label_3
+    properties: {text: 'How our tool works:
+
+
+        We developed an artificial intelligence (AI) tool which uses a large language
+        model (LLM) to de-identify protected health information (PHI) in medical data
+        (“de-identification task”). Furthermore, we have applied the LLM to perform
+        a clinically relevant task: grading of radiology report quality relative to
+        a gold standard (“grading task”).
+
+        Medical data must be de-identified when used in contexts beyond direct patient
+        care, pursuant to the Health Insurance Portability and Accountability Act
+        of 1996 (HIPAA). The “Privacy Rule” established by HIPAA is designed to ensure
+        that PHI is maintained in a secure fashion unless needed to deliver care.
+        Therefore, compliance to HIPAA is of primary importance to this tool, as the
+        grading task may only be performed using data that has been stripped of PHI
+        via the de-identification task.
+
+        We also recognize the importance of delivering clinically accurate predictions
+        using AI tools. As there is potential for this tool to affect patient care
+        directly or indirectly, e.g. via use of the grading task to inform physician
+        review processes or via use of the de-identification and grading tasks in
+        research settings, adherence to algorithmic accountability principles is crucial
+        to maintain trust in the tool and the medical processes to which it may apply.
+
+        ', spacing_above: large, underline: false}
+    type: Label
+    layout_properties: {grid_position: 'EXNTFB,FICQBB'}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}
