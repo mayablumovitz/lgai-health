@@ -50,3 +50,7 @@ class Form1(Form1Template):
     """This method is called when the button is clicked"""
     txt_media = anvil.server.call('get_media_txt', self.Output.text)
     anvil.media.download(txt_media)
+
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass

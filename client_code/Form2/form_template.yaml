@@ -1,0 +1,15 @@
+container: {type: ColumnPanel}
+components:
+- name: label_2
+  properties: {text: Golden Standard Report, align: center, underline: true}
+  type: Label
+  layout_properties: {grid_position: 'UJGAJD,DKTMAA'}
+- name: Uploader_gold
+  properties: {file_types: '', background: 'theme:Primary Container', role: null,
+    show_state: true, bold: false, spacing_below: large}
+  type: FileLoader
+  layout_properties: {grid_position: 'QNKHLU,SKKQFV'}
+  event_bindings: {change: Uploader_gold_change}
+  data_bindings:
+  - {property: file_types, code: '''.txt''', writeback: false}
+is_package: true
